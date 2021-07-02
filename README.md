@@ -2,6 +2,7 @@
 
 # Links:
 
+**PyBitz:** https://github.com/8Bitz0/PyBitz
 **Releases:** https://github.com/8Bitz0/xChat/releases
 
 # Goals:
