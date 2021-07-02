@@ -1,3 +1,5 @@
+# Release on **7/4/21**
+
 # Links:
 
 **Releases:** https://github.com/8Bitz0/xChat/releases
