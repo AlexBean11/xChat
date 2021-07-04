@@ -1,5 +1,3 @@
-# Release on **7/4/21**
-
 # Links:
 
 **PyBitz:** https://github.com/8Bitz0/PyBitz
