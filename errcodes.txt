@@ -1,0 +1,2 @@
+5: terminal was shutdown
+9: xchat terminated
