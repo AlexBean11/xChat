@@ -14,7 +14,10 @@ import pybitz
 import tkinter as tk
 from tkinter.font import *
 import webbrowser
-from tkinter import ttk
+try:
+    from tkinter import ttk
+except:
+    pass
 
 theme = 'nativ'
 
