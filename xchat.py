@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 
 if True == True:
-    import os, requests, sys, platform
-
-    # requires: pip3 install requests
+    import os, sys, platform
 
     # ----------------Init Phase----------------#
 
@@ -115,12 +113,6 @@ try:
     os.makedirs('assets/buttons/images')
     os.makedirs('assets/host/images')
     os.makedirs('assets/window/images')
-    iassets = open('assets/window/images/icon.ico', 'w')
-    iassets.write("""           Û      ‰PNG
-
-   
-IHDR         ö{`í   orNTÏ¢wš   •IDATxÚíÁ
-   Â ÷Oíì                                                                                                                               7 øBà    IEND®B`‚""")
 except:
     pass
 
@@ -204,7 +196,7 @@ def welcome():
         welcomewin.overrideredirect(True)
         welcomewin.eval('tk::PlaceWindow . center')
         welcomewin.title('Welcome!')
-        welcomewin.iconbitmap('assets/window/images/icon.ico')
+        #welcomewin.iconbitmap('assets/window/images/icon.ico')
         #welcomewin.style.theme_use('xpnative')
         welcomewin.focus()
     else:
@@ -214,7 +206,7 @@ def welcome():
         welcomewin.overrideredirect(True)
         welcomewin.eval('tk::PlaceWindow . center')
         welcomewin.title('Welcome!')
-        welcomewin.iconbitmap('assets/window/images/icon.ico')
+        #welcomewin.iconbitmap('assets/window/images/icon.ico')
         welcomewin.configure(bg='#222')
         welcomewin.focus()
 
@@ -295,7 +287,7 @@ def welcome2():
         welcomewin.overrideredirect(True)
         welcomewin.eval('tk::PlaceWindow . center')
         welcomewin.title('xChat - Welcome!')
-        welcomewin.iconbitmap('assets/window/images/icon.ico')
+        #welcomewin.iconbitmap('assets/window/images/icon.ico')
         welcomewin.focus()
     else:
         welcomewin = tk.Tk()
@@ -304,7 +296,7 @@ def welcome2():
         welcomewin.overrideredirect(True)
         welcomewin.eval('tk::PlaceWindow . center')
         welcomewin.title('xChat - Welcome!')
-        welcomewin.iconbitmap('assets/window/images/icon.ico')
+        #welcomewin.iconbitmap('assets/window/images/icon.ico')
         welcomewin.configure(bg='#222')
         welcomewin.focus()
 
@@ -406,7 +398,7 @@ def welcome3():
         welcomewin.overrideredirect(True)
         welcomewin.eval('tk::PlaceWindow . center')
         welcomewin.title('xChat - Welcome!')
-        welcomewin.iconbitmap('assets/window/images/icon.ico')
+        #welcomewin.iconbitmap('assets/window/images/icon.ico')
         welcomewin.focus()
     else:
         welcomewin = tk.Tk()
@@ -415,7 +407,7 @@ def welcome3():
         welcomewin.overrideredirect(True)
         welcomewin.eval('tk::PlaceWindow . center')
         welcomewin.title('xChat - Welcome!')
-        welcomewin.iconbitmap('assets/window/images/icon.ico')
+        #welcomewin.iconbitmap('assets/window/images/icon.ico')
         welcomewin.configure(bg='#222')
         welcomewin.focus()
 
