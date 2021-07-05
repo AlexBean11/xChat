@@ -609,7 +609,7 @@ def settings():
         backbutton.bind("<Enter>", lambda event:backenter())
         backbutton.bind("<Leave>", lambda event:backleave())
         
-        backbutton.place(x=448, y=273)
+    backbutton.place(x=448, y=273)
 
     mainwin.mainloop()
     
