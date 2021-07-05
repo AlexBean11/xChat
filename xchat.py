@@ -1,3 +1,96 @@
+#!/usr/bin/env python
+
+if True == True:
+    import os, requests, sys, platform
+
+    # requires: pip3 install requests
+
+    # ----------------Init Phase----------------#
+
+    # creates directories for storing files
+    try:
+        os.mkdir('.bank')
+    except:
+        pass
+    try:
+        os.mkdir('.temp')
+    except:
+        pass
+    try:
+        os.mkdir('.desktop')
+    except:
+        pass
+
+    version = '1.1.0'
+
+
+    # ----------------Defining Phase----------------#
+
+    # just clears the terminal, compatible with every os (hopefully)
+    def clear():
+        os.system('cls' if os.name == 'nt' else 'clear')
+
+    # banking
+    # saves a string to a bank
+    def sbank(string, id):
+        try:
+            open('.bank/' + str(int(id)), "x")
+        except:
+            pass
+        pbsbank = open('.bank/' + str(int(id)), "w")
+        pbsbank.write(string)
+        pbsbank.close()
+
+    # appends to a bank
+    def abank(string, id):
+        try:
+            open('.bank/' + str(id), "x")
+        except:
+            pass
+        pbabank = open('.bank/' + str(int(id)), "a")
+        pbabank.write(string)
+        pbabank.close()
+
+    # deletes a bank
+    def dbank(id):
+        os.remove('.bank/' + str(int(id)))
+
+    # reads from a bank and returns it
+    def rbank(id):
+        pbrbank = open('.bank/' + str(int(id)), "r")
+        retnum = pbrbank.read()
+        return retnum
+
+    # reads up to a certain character in the bank
+    def rcbank(character, id):
+        pbrbank = open('.bank/' + str(int(id)), "r")
+        retnum = pbrbank.readline(int(character))
+        return retnum
+
+    # reads up to a certain line in the bank
+    def rlbank(line, id):
+        pbrbank = open('.bank/' + str(int(id)), "r")
+        retnum = pbrbank.readlines(int(line))
+        return retnum
+
+    # formats a string using a file and returns it
+    def format(string):
+        format = open('.temp/format', 'w')
+        format.write(string)
+        format.close()
+        format = open('.temp/format', 'r')
+        formatstring = format.read()
+        format.close()
+        return formatstring
+
+    # returns the version of pybitz
+    def getversion():
+        return version
+
+    # runs the file specified
+    def runfile(file):
+        exec(open(file).read())
+
 import socket
 import random
 import platform
@@ -10,7 +103,6 @@ from time import sleep
 from os import close
 from tkinter import Entry, PhotoImage, messagebox
 import webbrowser
-import pybitz
 import tkinter as tk
 from tkinter.font import *
 import webbrowser
@@ -19,9 +111,22 @@ try:
 except:
     pass
 
+try:
+    os.makedirs('assets/buttons/images')
+    os.makedirs('assets/host/images')
+    os.makedirs('assets/window/images')
+    iassets = open('assets/window/images/icon.ico', 'w')
+    iassets.write("""           Û      ‰PNG
+
+   
+IHDR         ö{`í   orNTÏ¢wš   •IDATxÚíÁ
+   Â ÷Oíì                                                                                                                               7 øBà    IEND®B`‚""")
+except:
+    pass
+
 theme = 'nativ'
 
-pybitz.clear()
+clear()
 
 #Init:
 
@@ -29,9 +134,9 @@ def stop():
     sys.exit()
 
 try:
-    pybitz.rbank(7378)
+    rbank(7378)
 except:
-    pybitz.sbank('False', 7378)
+    sbank('False', 7378)
 
 #####################################################################
 # Terminal Thread
@@ -53,7 +158,7 @@ def terminal_thread_function():
         elif termcommand == '':
             pass
         else:
-            print("Unkown command!")
+            print("Unknown command!")
 
 def terminal():
     terminalthread = threading.Thread(target=terminal_thread_function)
@@ -91,7 +196,7 @@ def welcome():
 
     def nextleave():
         nextbutton['background'] = '#353535'
-    #pybitz.sbank("(:<", 5495637)
+    #sbank("(:<", 5495637)
     if theme == 'native':
         welcomewin = tk.Tk()
         welcomewin.geometry('230x70')
@@ -234,7 +339,7 @@ def welcome2():
             text='Next >',
             width='8',
             cursor='hand2',
-            command=lambda:[pybitz.sbank(usernameinput.get(), id=3213), welcomewin.destroy(), welcome3()]
+            command=lambda:[sbank(usernameinput.get(), id=3213), welcomewin.destroy(), welcome3()]
         )
     else:
         nextbutton = tk.Button(
@@ -247,7 +352,7 @@ def welcome2():
             cursor='hand2',
             activeforeground='white',
             activebackground='#444',
-            command=lambda:[pybitz.sbank(usernameinput.get(), id=3213), welcomewin.destroy(), welcome3()]
+            command=lambda:[sbank(usernameinput.get(), id=3213), welcomewin.destroy(), welcome3()]
         )
 
     usernameinput.place(x=81, y=40)
@@ -259,7 +364,7 @@ def welcome2():
     #    else:
     #        usernameverified = True
     #        welcome3()
-    #    pybitz.sbank(usernameinput.get(), id=3213)
+    #    sbank(usernameinput.get(), id=3213)
     
     if theme == 'native':
         pass
@@ -333,7 +438,7 @@ def welcome3():
             text='Yes',
             width='8',
             cursor='hand2',
-            command=lambda:[pybitz.sbank('True', 8577), welcomewin.destroy(), welcome4()]
+            command=lambda:[sbank('True', 8577), welcomewin.destroy(), welcome4()]
         )
     else:
         yesbutton = tk.Button(
@@ -346,7 +451,7 @@ def welcome3():
             cursor='hand2',
             activeforeground='white',
             activebackground='#E00000',
-            command=lambda:[pybitz.sbank('True', 8577), welcomewin.destroy(), welcome4()]
+            command=lambda:[sbank('True', 8577), welcomewin.destroy(), welcome4()]
         )
 
     if theme == 'native':
@@ -363,7 +468,7 @@ def welcome3():
             text='No',
             width='8',
             cursor='hand2',
-            command=lambda:[pybitz.sbank('False', 8577), welcomewin.destroy(), welcome4()]
+            command=lambda:[sbank('False', 8577), welcomewin.destroy(), welcome4()]
         )
     else:
         nobutton = tk.Button(
@@ -376,7 +481,7 @@ def welcome3():
             cursor='hand2',
             activeforeground='white',
             activebackground='#444',
-            command=lambda:[pybitz.sbank('False', 8577), welcome4()]
+            command=lambda:[sbank('False', 8577), welcome4()]
         )
 
     if theme == 'native':
@@ -420,7 +525,7 @@ def welcome4():
         welcomewin.overrideredirect(True)
         welcomewin.eval('tk::PlaceWindow . center')
         welcomewin.title('xChat - Welcome!')
-        welcomewin.iconbitmap('assets/window/images/icon.ico')
+        #welcomewin.iconbitmap('assets/window/images/icon.ico')
         welcomewin.focus()
     else:
         welcomewin = tk.Tk()
@@ -429,7 +534,7 @@ def welcome4():
         welcomewin.overrideredirect(True)
         welcomewin.eval('tk::PlaceWindow . center')
         welcomewin.title('xChat - Welcome!')
-        welcomewin.iconbitmap('assets/window/images/icon.ico')
+        #welcomewin.iconbitmap('assets/window/images/icon.ico')
         welcomewin.configure(bg='#222')
         welcomewin.focus()
 
@@ -479,18 +584,18 @@ def welcome4():
     welcomewin.mainloop()
 
 try:
-    pybitz.rbank(5913)
+    rbank(5913)
 except:
-    pybitz.sbank('', 5913)
+    sbank('', 5913)
     welcome()
 
 try:
-    pybitz.rbank(3213)
+    rbank(3213)
 except:
     welcome()
 
 try:
-    pybitz.rbank(8577)
+    rbank(8577)
 except:
     welcome()
 
@@ -516,7 +621,7 @@ def settings():
         settingswin.geometry('500x300')
         settingswin.eval('tk::PlaceWindow . center')
         settingswin.title('xChat - Settings')
-        settingswin.iconbitmap('assets/window/images/icon.ico')
+        #settingswin.iconbitmap('assets/window/images/icon.ico')
     else:
         settingswin = tk.Tk()
         settingswin.configure(bg='#222')
@@ -525,7 +630,7 @@ def settings():
         settingswin.geometry('500x300')
         settingswin.eval('tk::PlaceWindow . center')
         settingswin.title('xChat - Settings')
-        settingswin.iconbitmap('assets/window/images/icon.ico')
+        #settingswin.iconbitmap('assets/window/images/icon.ico')
 
     titleStyle = Font(family="Lucida Grande", size=20)
 
@@ -658,7 +763,7 @@ if theme == 'native':
     mainwin.geometry('500x300')
     mainwin.eval('tk::PlaceWindow . center')
     mainwin.title('xChat')
-    mainwin.iconbitmap('assets/window/images/icon.ico')
+    #mainwin.iconbitmap('assets/window/images/icon.ico')
 else:
     mainwin = tk.Tk()
     mainwin.configure(bg='#222')
@@ -668,20 +773,20 @@ else:
     mainwin.geometry('500x300')
     mainwin.eval('tk::PlaceWindow . center')
     mainwin.title('xChat')
-    mainwin.iconbitmap('assets/window/images/icon.ico')
+    #mainwin.iconbitmap('assets/window/images/icon.ico')
 
 titleStyle = Font(family="Lucida Grande", size=20)
 
 if theme == 'native':
     titletext = tk.Label(
         mainwin,
-        text="Hello, " + pybitz.rbank(3213) + "!",
+        text="Hello, " + rbank(3213) + "!",
         font=titleStyle
     ).place(x=15, y=15)
 else:
     titletext = tk.Label(
         mainwin,
-        text="Hello, " + pybitz.rbank(3213) + "!",
+        text="Hello, " + rbank(3213) + "!",
         fg='white',
         bg='#222',
         font=titleStyle
@@ -835,7 +940,7 @@ def host():
         hostwin.geometry('500x300')
         hostwin.eval('tk::PlaceWindow . center')
         hostwin.title('xChat - Host')
-        hostwin.iconbitmap('assets/window/images/icon.ico')
+        #hostwin.iconbitmap('assets/window/images/icon.ico')
     else:
         hostwin = tk.Tk()
         hostwin.configure(bg='#222')
@@ -845,7 +950,7 @@ def host():
         hostwin.geometry('500x300')
         hostwin.eval('tk::PlaceWindow . center')
         hostwin.title('xChat - Host')
-        hostwin.iconbitmap('assets/window/images/icon.ico')
+        #hostwin.iconbitmap('assets/window/images/icon.ico')
 
     titleStyle = Font(hostwin, family="Lucida Grande", size=18)
     subStyle = Font(hostwin, family="Lucida Grande", size=12)
@@ -899,12 +1004,12 @@ def host():
     if theme == 'native':
         servertext = tk.Label(
             hostwin,
-            text="A blank standard server."
+            text="A standard server."
         ).place(x=100, y=68)
     else:
         servertext = tk.Label(
             hostwin,
-            text="A blank standard server.",
+            text="A standard server.",
             fg='white',
             bg='#222'
         ).place(x=100, y=68)
@@ -950,7 +1055,7 @@ def connect():
     def sayerror():
         print("An error has occurred! xChat cannot continue!")
     
-    pybitz.clear()
+    clear()
     
     print("        _____ _           _   ")
     print("       / ____| |         | |  ")
@@ -985,13 +1090,13 @@ def connect():
     if quit == False:
         print("[+] Connected.")
         connected = True
-        to_send = pybitz.rbank(3213) + " has connected!"
+        to_send = rbank(3213) + " has connected!"
         try:
             to_send = to_send
             s.send(to_send.encode())
         except:
             print("Disconnected!")
-        name = pybitz.rbank(3213)
+        name = rbank(3213)
         
         def listen_for_messages():
             while True:
@@ -1011,7 +1116,7 @@ def connect():
         to_send = to_send
         
         
-        pybitz.clear()
+        clear()
         print("        _____ _           _   ")
         print("       / ____| |         | |  ")
         print(" __  _| |    | |__   __ _| |_ ")
@@ -1029,7 +1134,7 @@ def connect():
             break
             mainwin.deiconify()
         if to_send.lower() == 'clear':
-            pybitz.clear()
+            clear()
             print("        _____ _           _   ")
             print("       / ____| |         | |  ")
             print(" __  _| |    | |__   __ _| |_ ")
@@ -1201,10 +1306,19 @@ def hostserver():
     print(" /_/\_\\\_____|_| |_|\__,_|\__|  |_____/ \___|_|    \_/ \___|_|   \n")
 
     SERVER_HOST = "0.0.0.0"
+    #try:
+    #    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    #    s.connect(("8.8.8.8", 80))
+    #    print("You are: " + s.getsockname()[0])
+    #    s.close()
+    #except:
+    #    print("You must be connected to a network to get your IP Address!")
     try:
-        SERVER_PORT = int(input("Port: "))
+        SERVER_PORT = int(rbank(8364))
     except:
-        sayerror()
+        sbank('56089', 8364)
+        SERVER_PORT = 56089
+        
 
     separator_token = "<SEP>"
 
