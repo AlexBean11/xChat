@@ -18,4 +18,4 @@
 - [x] Python 3.0
 - [ ] Python 2.7
 
-xChat works on Windows XP and above, OS X 10.3 *should* work, Linux should also work fine.
+xChat works on Windows XP and above, OS X 10.3 and above *should* work, Linux should also work fine.
