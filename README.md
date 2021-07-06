@@ -1,3 +1,5 @@
+# macOS support is being developed!
+
 # Links:
 
 **PyBitz:** https://github.com/8Bitz0/PyBitz
@@ -7,6 +9,7 @@
 # Requirements:
 
 **Python executable:** Windows XP or above.
+
 **Windows build:** Windows 7 or above.
 
 # Python versions supported:
