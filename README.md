@@ -1,4 +1,4 @@
-# xChat  [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/8Bitz0/xChat)
+# xChat                                   [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/8Bitz0/xChat)
 
 # Links:
 
