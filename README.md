@@ -4,7 +4,7 @@
 
 # Links:
 
-**PyBitz:** https://github.com/8Bitz0/PyBitz![Uploading Latest Release-v1.0.png…]()
+**PyBitz:** https://github.com/8Bitz0/PyBitz!
 
 
 **Releases:** https://github.com/8Bitz0/xChat/releases
