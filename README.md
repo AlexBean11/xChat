@@ -1,11 +1,9 @@
 # xChat [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/8Bitz0/xChat)
-![Latest Release-v1 0 (1)](https://user-images.githubusercontent.com/82516534/124997465-a5c63780-e018-11eb-8323-0ea6594baf18.png)
-
+![Release Version: v1.0.4a](https://img.shields.io/badge/Release%20Version-v1.0.4a-brightgreen) ![Development Version: v1.0.5a](https://img.shields.io/badge/Development%20Version-v1.0.5a-yellow)
 
 # Links:
 
 **PyBitz:** https://github.com/8Bitz0/PyBitz!
-
 
 **Releases:** https://github.com/8Bitz0/xChat/releases
 
