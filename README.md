@@ -1,5 +1,5 @@
-# xChat
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/8Bitz0/xChat) ![Latest Release-v1 0 (1)](https://user-images.githubusercontent.com/82516534/124997465-a5c63780-e018-11eb-8323-0ea6594baf18.png)
+# xChat [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/8Bitz0/xChat)
+![Latest Release-v1 0 (1)](https://user-images.githubusercontent.com/82516534/124997465-a5c63780-e018-11eb-8323-0ea6594baf18.png)
 
 
 # Links:
